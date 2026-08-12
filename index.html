@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Olho Humano - Apresentação Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Animação de Introdução e Olho -->
+  <div class="intro-container">
+    <button id="openBtn" class="btn-primary">
+      <span>Abra seus<br>olhos</span>
+    </button>
+
+    <div id="eyeContainer" class="eye-container">
+      <svg class="eye-svg" viewBox="0 0 200 200">
+        <g class="eye-content">
+          <path class="eye-shape" d="M 15,100 Q 100,25 185,100 Q 100,175 15,100 Z" />
+          <g class="iris-group">
+            <circle cx="100" cy="100" r="40" class="iris" />
+            <circle cx="100" cy="100" r="18" class="pupil" />
+            <circle cx="112" cy="88" r="6" fill="#ffffff" />
+          </g>
+        </g>
+        <g class="eyelashes" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" fill="none">
+          <path d="M 35,72 Q 25,52 15,47" />
+          <path d="M 60,50 Q 52,27 42,20" />
+          <path d="M 85,37 Q 82,12 75,4" />
+          <path d="M 115,37 Q 118,12 125,4" />
+          <path d="M 140,50 Q 148,27 158,20" />
+          <path d="M 165,72 Q 175,52 185,47" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div id="mainContent" class="main-content">
+    
+    <header class="navbar">
+      <div class="logo">O Olho Humano</div>
+      <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#estruturas">Estrutura</a>
+        <a href="#doencas">Doenças Oculares</a>
+      </nav>
+    </header>
+
+    <main class="content-wrapper">
+      
+      <section id="introducao" class="hero-section">
+        <span class="badge">Apresentação Escolar</span>
+        <h1>Como Enxergamos o Mundo</h1>
+        <p class="subtitle" style="margin-bottom: 1.5rem;">
+          Nossos olhos funcionam como câmeras fotográficas naturais e incrivelmente complexas. Eles captam a luz ao nosso redor e trabalham em equipe com o cérebro para transformar essa luz nas imagens, cores e formas que vemos todos os dias.
+        </p>
+        <p class="subtitle" style="font-size: 1rem;">
+          <strong>Nesta apresentação, vamos entender:</strong><br><br>
+          <strong>1. A estrutura do olho:</strong> quais são as principais partes que tornam a nossa visão possível.<br>
+          <strong>2. Doenças oculares comuns:</strong> o que pode afetar o nosso olhar e a importância de cuidar da saúde dos olhos.
+        </p>
+      </section>
+
+      <section id="estruturas" style="margin-bottom: 5rem;">
+        <h2 style="text-align: center; margin-bottom: 2.5rem; color: #0f172a; font-size: 2rem;">Estrutura do Olho</h2>
+        <div class="cards-grid">
+          
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Córnea</h3>
+            <p><strong>O que é:</strong> A "janela" transparente na parte da frente do olho.</p><br>
+            <p><strong>Função:</strong> Protege o olho e funciona como a primeira lente, ajudando a focar a luz que entra para que possamos ver com nitidez.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">👁️</div>
+            <h3>Pupila e Íris</h3>
+            <p><strong>O que são:</strong> A íris é a parte colorida do olho, e a pupila é o ponto preto no centro dela.</p><br>
+            <p><strong>Função:</strong> Controlam a quantidade de luz. Em lugares claros, a pupila diminui; no escuro, ela aumenta para captar mais luz.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔎</div>
+            <h3>Cristalino</h3>
+            <p><strong>O que é:</strong> Uma lente natural que fica logo atrás da pupila.</p><br>
+            <p><strong>Função:</strong> Faz o "foco fino" da visão. Ele muda de formato para nos permitir enxergar com clareza tanto o que está perto quanto o que está longe.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎞️</div>
+            <h3>Retina</h3>
+            <p><strong>O que é:</strong> O "filme fotográfico" que fica no fundo do olho.</p><br>
+            <p><strong>Função:</strong> Formada por milhões de células sensíveis à luz. Transforma a luz em sinais elétricos e os envia pelo nervo óptico até o cérebro.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Nervo Óptico</h3>
+            <p><strong>O que é:</strong> O "cabo conector" que liga o olho ao cérebro.</p><br>
+            <p><strong>Função:</strong> Transporta os sinais gerados pela retina para o cérebro. Sem ele, o cérebro não receberia as informações e não conseguiríamos "ver".</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="doencas">
+        <h2 style="text-align: center; margin-bottom: 2.5rem; color: #0f172a; font-size: 2rem;">Doenças Oculares Comuns</h2>
+        <div class="cards-grid">
+          
+          <article class="card">
+            <div class="card-icon">👓</div>
+            <h3>Miopia</h3>
+            <p><strong>O que é:</strong> Dificuldade para enxergar de longe.</p><br>
+            <p><strong>No olho:</strong> É um pouco mais "longo" que o normal. A luz foca antes da retina.</p><br>
+            <p><strong>Como enxerga:</strong> Objetos próximos ficam nítidos, mas o que está distante fica embaçado.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📖</div>
+            <h3>Hipermetropia</h3>
+            <p><strong>O que é:</strong> Dificuldade para enxergar de perto.</p><br>
+            <p><strong>No olho:</strong> É um pouco mais "curto" que o normal. A luz tenta se focar atrás da retina.</p><br>
+            <p><strong>Como enxerga:</strong> Objetos distantes são nítidos, mas focar de perto exige esforço, causando vista cansada e dor de cabeça.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💫</div>
+            <h3>Astigmatismo</h3>
+            <p><strong>O que é:</strong> Visão borrada ou distorcida de perto e de longe.</p><br>
+            <p><strong>No olho:</strong> A córnea tem um formato irregular (como uma bola de futebol americano), dividindo a luz em vários pontos de foco.</p><br>
+            <p><strong>Como enxerga:</strong> Imagens sem contorno definido (com "sombra") e luzes parecem esticadas ou borradas.</p>
+          </article>
+
+        </div>
+
+        <!-- NOVO: Botão Extra -->
+        <div class="extra-btn-container">
+          <button id="extraBtn" class="btn-extra">Extra</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- NOVO: Camada de Transição Psicodélica -->
+  <div id="psychoTransition" class="black-border-transition"></div>
+
+  <!-- NOVO: Conteúdo Extra (Dados Estatísticos) -->
+  <div id="extraContentContainer" class="extra-content-wrapper">
+    <div class="extra-header">
+      <h2>Genética vs. Telas</h2>
+      <p>O que realmente afeta a estrutura dos nossos olhos a longo prazo? Descubra os fatos por trás do uso do celular e da hereditariedade.</p>
+    </div>
+    
+    <div class="extra-grid">
+      <div class="extra-card">
+        <h3>O Peso da Genética na Visão</h3>
+        <ul>
+          <li>A hereditariedade causa muito mais doenças oculares graves e definitivas do que o celular.</li>
+          <li>Mais de 350 patologias oculares possuem forte base genética.</li>
+          <li>Doenças como glaucoma congênito, catarata congênita, retinose pigmentar e daltonismo têm origem hereditária confirmada.</li>
+          <li>A degeneração macular relacionada à idade (DMRI) e o glaucoma possuem componentes genéticos determinantes no histórico familiar.</li>
+          <li>A miopia de alto grau apresenta um forte padrão de transmissão hereditária nas famílias.</li>
+        </ul>
+      </div>
+
+      <div class="extra-card">
+        <h3>O Impacto Real do Celular</h3>
+        <ul>
+          <li>O uso de telas provoca apenas fadiga visual e olho seco temporário, sem relação direta com doenças estruturais graves ou degenerações.</li>
+          <li>O uso prolongado de celulares causa síndrome do olho seco devido à redução no número de piscadas.</li>
+          <li>Cada hora extra de tela pode influenciar o risco de miopia leve ou o esforço de foco para perto, mas não altera o DNA nem gera cegueira ou patologias internas crônicas.</li>
+          <li>A luz azul das telas não causa catarata, câncer ou degeneração macular, afetando apenas o ciclo do sono.</li>
+        </ul>
+      </div>
+
+      <div class="extra-card">
+        <h3>Como o Uso Sem Pausas Altera o Olho</h3>
+        <ul>
+          <li>O mecanismo que liga o celular à miopia envolve fatores físicos e ambientais, e não uma radiação da tela.</li>
+          <li>Focar em algo perto (a menos de 40 cm), faz o olho contrair o músculo ciliar; fazer isso por muitas horas sem pausa causa fadiga severa.</li>
+          <li>Diante do esforço contínuo para perto, o cérebro interpreta que o olho precisa se adaptar, gerando um alongamento físico do globo ocular (miopia real).</li>
+          <li>A pseudomiopia ocorre quando o músculo do olho pode simplesmente "travar" no modo de foco para perto após horas no celular, causando miopia temporária.</li>
+        </ul>
+      </div>
+
+      <div class="extra-card">
+        <h3>O Tempo de Tela e a Idade</h3>
+        <ul>
+          <li>Menos de 1 hora diária é considerada uma faixa segura com baixo risco.</li>
+          <li>O uso de 1 a 4 horas aumenta o risco de miopia de forma acentuada, cerca de 21% de aumento por hora extra.</li>
+          <li>Ficar apenas em ambientes fechados retira o estímulo da dopamina na retina, que serve como um "freio" natural contra o alongamento do olho.</li>
+          <li>O risco de desenvolver miopia pelo celular é imensamente maior em crianças e adolescentes porque a estrutura ocular deles ainda é maleável e está crescendo.</li>
+          <li>Em um adulto com mais de 21 anos, o uso contínuo do celular dificilmente vai criar uma miopia estrutural do zero, pois o olho já atingiu o tamanho final.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

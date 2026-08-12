@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b0f19; 
+  color: #0f172a;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 1.5s ease-in-out;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+}
+
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.intro-container button {
+  pointer-events: auto;
+}
+
+.btn-primary {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 25px rgba(37, 99, 235, 0.45);
+  transition: opacity 1s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.btn-primary:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 30px rgba(37, 99, 235, 0.65);
+}
+
+.btn-primary.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.eye-container {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  opacity: 0;
+}
+
+.eye-svg {
+  width: 100%;
+  height: 100%;
+  clip-path: inset(50% 0 50% 0);
+}
+
+.eye-shape {
+  fill: #ffffff;
+  stroke: #1e293b;
+  stroke-width: 3;
+}
+
+.iris { fill: #0284c7; }
+.pupil { fill: #090d16; }
+
+.eyelashes {
+  transform-origin: 100px 100px;
+  transform: translateY(35px);
+}
+
+.eye-container.active { opacity: 1; }
+.eye-container.active .eye-svg { animation: eyeSequence 9s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.eye-container.active .eyelashes { animation: lashesSequence 9s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.eye-container.active .iris-group { animation: lookAround 9s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+@keyframes eyeSequence {
+  0% { clip-path: inset(50% 0 50% 0); opacity: 1; }
+  20% { clip-path: inset(0% 0 0% 0); }
+  25% { clip-path: inset(0% 0 0% 0); }
+  30% { clip-path: inset(48% 0 48% 0); }
+  35% { clip-path: inset(0% 0 0% 0); }
+  40% { clip-path: inset(48% 0 48% 0); }
+  45% { clip-path: inset(0% 0 0% 0); }
+  75% { clip-path: inset(0% 0 0% 0); opacity: 1; }
+  88% { clip-path: inset(50% 0 50% 0); opacity: 1; }
+  100% { clip-path: inset(50% 0 50% 0); opacity: 0; }
+}
+
+@keyframes lashesSequence {
+  0% { transform: translateY(35px); }
+  20% { transform: translateY(0px); }
+  25% { transform: translateY(0px); }
+  30% { transform: translateY(32px); }
+  35% { transform: translateY(0px); }
+  40% { transform: translateY(32px); }
+  45% { transform: translateY(0px); }
+  75% { transform: translateY(0px); }
+  88%, 100% { transform: translateY(35px); }
+}
+
+@keyframes lookAround {
+  0%, 48% { transform: translateX(0px); }
+  55% { transform: translateX(-26px); }
+  62% { transform: translateX(-26px); }
+  68% { transform: translateX(26px); }
+  73% { transform: translateX(26px); }
+  80%, 100% { transform: translateX(0px); }
+}
+
+.main-content {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.main-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2563eb;
+}
+
+.navbar nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover { color: #2563eb; }
+
+.content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.badge {
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin: 1.5rem 0 1rem;
+  color: #0f172a;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #f8fafc;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+
+.card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ======================================= */
+/* ESTILOS DA NOVA FASE EXTRA              */
+/* ======================================= */
+
+.extra-btn-container {
+  text-align: center;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.btn-extra {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-extra:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 30px rgba(109, 40, 217, 0.6);
+}
+
+/* Transição Psicodélica Fluida (Foca no meio -> Balde de tinta) */
+.black-border-transition {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150vmax; height: 150vmax;
+  border: 0px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.black-border-transition.active {
+  animation: closeToCenter 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes closeToCenter {
+  0% { border-width: 0px; border-color: black; background: transparent; }
+  40% { border-width: 75vmax; border-color: #000000; background: transparent; }
+  50% { border-width: 75vmax; border-color: #000000; background: #000000; }
+  65% { border-width: 75vmax; border-color: #000000; background: #8b5cf6; } 
+  100% { border-width: 0px; border-radius: 0; border-color: #0f172a; background: #0f172a; width: 100vw; height: 100vh; }
+}
+
+/* Container do Novo Conteúdo */
+.extra-content-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  padding: 4rem 2rem;
+  color: #f8fafc;
+  display: none; 
+}
+
+.extra-content-wrapper.visible {
+  animation: fadeInExtra 1.5s ease forwards;
+  pointer-events: auto;
+}
+
+@keyframes fadeInExtra {
+  to { opacity: 1; }
+}
+
+.extra-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.extra-header h2 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+}
+
+.extra-header p {
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.extra-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.extra-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.extra-card h3 {
+  color: #c4b5fd;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  padding-bottom: 0.8rem;
+}
+
+.extra-card ul {
+  list-style: none;
+}
+
+.extra-card li {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.extra-card li::before {
+  content: "✦";
+  color: #a78bfa;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+}
